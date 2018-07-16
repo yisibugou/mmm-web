@@ -53,7 +53,7 @@ body {
 .home_img {
 	position: relative;
 	width: 100%;
-	height: 400px;
+	height: 60%;
 	background: red;
 	background-image: url(img/timg.jpg);
 	background-size:100% 100%;
@@ -105,11 +105,20 @@ body {
 	height: 10%;
 	background: #2B3747;
 	text-align: center;
+	position: relative;
+}
+
+.login {
+	width: 440px;
+	height: 438px;
+	background: white;
+	margin: 50px auto;
 }
 </style>
 </head>
 
 <body ng-app="myApp">
+<!--
 <div class="header">
 	<div class="header_left">
 		河池之星
@@ -123,11 +132,34 @@ body {
 		</div>
 	</div>
 </div>
-<div class="home_img">
+ -->
+
+<div class="home_img" >
 	<div class="home_img_cover"></div>
+	<div style="position: absolute; left:10%; color: white; top:5%; font-size: 25px;">
+		河池之星
+	</div>
+	<div style="position: absolute; right:15%; color: white; top:5%; font-size: 20px;" data-toggle="modal" data-target="#register">
+		注册
+	</div>
+	<div style="position: absolute; right:20%; color: white; top:5%; font-size: 20px;" data-toggle="modal" data-target="#login">
+		登录
+	</div>
 	<div style="position:absolute; top:80%;left:10%;width:400px">
 		<input class="btn btn-default" style="background:red; color:white;" type="button" value="Android">
 		<input class="btn btn-default" style="margin-left: 50px; background:red; color:white;" type="button" value="IOS">
+	</div>
+</div>
+<div class="modal fade" id="login">
+	<div class="login">
+		<div style="width: 100%; font-size: 25px; color: #FF6A6A; text-align: center; padding-top: 20px;">河池之星</div>
+		<div style="width: 100%; font-size: 17px; color: #FF6A6A; text-align: center; padding-top: 10px;">登录河池之星，发现更多的机会</div>
+		<input style="width:75%; border:none; border-bottom:2px solid #eee;outline: none; margin-left:12%; margin-top: 40px;">
+		<input style="width:75%; border:none; border-bottom:2px solid #eee;outline: none; margin-left:12%;margin-top: 50px;">
+	</div>
+</div>
+<div class="modal fade" id="register">
+	<div class="login">
 	</div>
 </div>
 <div class="task_market">
@@ -255,7 +287,20 @@ body {
 	</div>
 </div>
 
-<div style="background:white; width:100%; height:10%;"></div>
+<div style="background:white; width:100%; height:20%; text-align: center; padding-top: 35px;">
+	<div style="display: inline-block; font-size: 25px;padding-right: 15%;">
+		<div style="font-size:30px;">￥999,999,999</div>
+		<div style="font-size:20px;">交易总额</div>
+	</div>
+	<div style="display:inline-block;">
+		<div style="font-size:30px;">999,999</div>
+		<div style="font-size:20px;">任务数</div>
+	</div>
+	<div style="display: inline-block; font-size: 25px; padding-left: 15%;">
+		<div style="font-size:30px;">999,999</div>
+		<div style="font-size:20px;">用户数</div>
+	</div>
+</div>
 <div class="excellent_man">
 	<div style="width:100%; text-align:center; font-size:28px;padding-top:40px;">
 		优秀任务达人
@@ -377,20 +422,22 @@ body {
 </div>
 
 <div class="footer">
-	<div style="display:inline-block; color: white; font-size: 20px; padding-right: 10%; height: 50px;	padding-top: 20px;">
+
+	<div style="display: inline-block; color: white; font-size: 20px; padding-top: 20px;padding-left: 10%;">
 		河池之星
 	</div>
-	<div style="display:inline-block; color: white; font-size: 18px;padding-left: 10%; padding-right: 10%;height: 50px;">
+	<div style="display: inline-block;color: white; font-size: 18px;padding-left: 20%; padding-right: 20%;padding-top: 25px;">
 		Copyright © 2018-2022
 	</div>
-	<div style="float:right;  color: white; font-size: 15px;padding-right: 10%;height: 50px; padding-top: 15px;">
-		<div style="text-align: left;">
+	<div style="display: inline-block; color: white; font-size: 15px;padding-right: 10%; position: relative;">
+		<div style="text-align: left; position: relative; top:10px;">
 			<span class="glyphicon glyphicon-map-marker" style="padding-right: 10px;"></span>广西河池市金城江区河池高中
 		</div>
-		<div style="text-align: left;">
+		<div style="text-align: left; position: relative; top:15px; ">
 			<span class="glyphicon glyphicon-phone-alt" style="padding-right: 10px;"></span>0778-2732188
 		</div>
 	</div>
+	
 </div>
 </body>
 </html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+<script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+html {
+	width: 100%;
+	min-width: 800px;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+.header {
+	width: 100%;
+	height: 40px;
+}
+
+.header_left {
+	display: inline-block;
+	width: 200px;
+	margin-top: 5px;
+	margin-left: 15%;
+	font-size: 22px;
+
+}
+
+.header_right {
+	float: right;
+	margin-top: 10px;
+	margin-right: 10%;
+	width: 50%;
+	font-size: 18px;
+
+}
+
+.header_right_item {
+	float: right;
+	width: 100px;
+	font-size: 18px;
+
+}
+
+.home_img {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	background: red;
+	background-image: url(img/timg.jpg);
+	background-size:100% 100%;
+}
+
+.home_img_cover {
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: 0.7;
+}
+
+.task_market {
+	width: 100%;
+	background: #F2F2F2;
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+.task {
+	display: inline-block;
+	width:30%;
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
+	padding: 15px;
+	background: white;
+}
+
+.excellent_man {
+	width: 100%;
+	background: #F2F2F2;
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+.man {
+	display: inline-block;
+	width:20%;
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
+	padding: 15px;
+	background: white;
+}
+
+.footer {
+	width: 100%;
+	height: 10%;
+	background: #2B3747;
+	text-align: center;
+}
+</style>
+</head>
+
+<body ng-app="myApp">
+<div class="header">
+	<div class="header_left">
+		河池之星
+	</div>
+	<div class="header_right">
+		<div class="header_right_item">
+			注册
+		</div>
+		<div class="header_right_item">
+			登录
+		</div>
+	</div>
+</div>
+<div class="home_img">
+	<div class="home_img_cover"></div>
+	<div style="position:absolute; top:80%;left:10%;width:400px">
+		<input class="btn btn-default" style="background:red; color:white;" type="button" value="Android">
+		<input class="btn btn-default" style="margin-left: 50px; background:red; color:white;" type="button" value="IOS">
+	</div>
+</div>
+<div class="task_market">
+	<div style="width:100%; text-align:center; font-size:28px;padding-top:40px;">
+		任务市场
+	</div>
+	<div style="font-size:28px; width: 80%; display: inline-block;text-align: center;">
+		<div class="task">
+			<div style="width:100%;font-size: 22px;text-align: center;">图书馆管理系统</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; margin-top: 10px; word-wrap:break-word;">
+				<span style="padding-right: 50px;">赏金</span>
+				<span>100元</span>
+				</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; word-wrap:break-word;margin-top: 10px;">
+				<span style="padding-right: 50px;">周期</span>
+				<span>2天</span>
+			</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%;word-wrap:break-word; margin-top:10px; padding-bottom: 8px;">
+				<span style="padding-right: 20px;">报名截止</span>
+				<span>2018-06-05 15:15:15</span>
+			</div>
+			<div style="display: inline-block; width:80%; text-align: left;font-size: 15px;border-top: 2px solid red; padding-top: 8px;">
+				<img src="img/timg.jpg" class="img-circle" width="40px" height="40px">
+				<span style="padding-left: 15px;">巴马一哥卢宝嘉</span>
+			</div>
+		</div>
+		<div class="task">
+			<div style="width:100%;font-size: 22px;text-align: center;">图书馆管理系统</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; margin-top: 10px; word-wrap:break-word;">
+				<span style="padding-right: 50px;">赏金</span>
+				<span>100元</span>
+				</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; word-wrap:break-word;margin-top: 10px;">
+				<span style="padding-right: 50px;">周期</span>
+				<span>2天</span>
+			</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%;word-wrap:break-word; margin-top:10px; padding-bottom: 8px;">
+				<span style="padding-right: 20px;">报名截止</span>
+				<span>2018-06-05 15:15:15</span>
+			</div>
+			<div style="display: inline-block; width:80%; text-align: left;font-size: 15px;border-top: 2px solid red; padding-top: 8px;">
+				<img src="img/timg.jpg" class="img-circle" width="40px" height="40px">
+				<span style="padding-left: 15px;">巴马一哥卢宝嘉</span>
+			</div>
+		</div>
+		<div class="task">
+			<div style="width:100%;font-size: 22px;text-align: center;">图书馆管理系统</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; margin-top: 10px; word-wrap:break-word;">
+				<span style="padding-right: 50px;">赏金</span>
+				<span>100元</span>
+				</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; word-wrap:break-word;margin-top: 10px;">
+				<span style="padding-right: 50px;">周期</span>
+				<span>2天</span>
+			</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%;word-wrap:break-word; margin-top:10px; padding-bottom: 8px;">
+				<span style="padding-right: 20px;">报名截止</span>
+				<span>2018-06-05 15:15:15</span>
+			</div>
+			<div style="display: inline-block; width:80%; text-align: left;font-size: 15px;border-top: 2px solid red; padding-top: 8px;">
+				<img src="img/timg.jpg" class="img-circle" width="40px" height="40px">
+				<span style="padding-left: 15px;">巴马一哥卢宝嘉</span>
+			</div>
+		</div>
+		<div class="task">
+			<div style="width:100%;font-size: 22px;text-align: center;">图书馆管理系统</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; margin-top: 10px; word-wrap:break-word;">
+				<span style="padding-right: 50px;">赏金</span>
+				<span>100元</span>
+				</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; word-wrap:break-word;margin-top: 10px;">
+				<span style="padding-right: 50px;">周期</span>
+				<span>2天</span>
+			</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%;word-wrap:break-word; margin-top:10px; padding-bottom: 8px;">
+				<span style="padding-right: 20px;">报名截止</span>
+				<span>2018-06-05 15:15:15</span>
+			</div>
+			<div style="display: inline-block; width:80%; text-align: left;font-size: 15px;border-top: 2px solid red; padding-top: 8px;">
+				<img src="img/timg.jpg" class="img-circle" width="40px" height="40px">
+				<span style="padding-left: 15px;">巴马一哥卢宝嘉</span>
+			</div>
+		</div>
+		<div class="task">
+			<div style="width:100%;font-size: 22px;text-align: center;">图书馆管理系统</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; margin-top: 10px; word-wrap:break-word;">
+				<span style="padding-right: 50px;">赏金</span>
+				<span>100元</span>
+				</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; word-wrap:break-word;margin-top: 10px;">
+				<span style="padding-right: 50px;">周期</span>
+				<span>2天</span>
+			</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%;word-wrap:break-word; margin-top:10px; padding-bottom: 8px;">
+				<span style="padding-right: 20px;">报名截止</span>
+				<span>2018-06-05 15:15:15</span>
+			</div>
+			<div style="display: inline-block; width:80%; text-align: left;font-size: 15px;border-top: 2px solid red; padding-top: 8px;">
+				<img src="img/timg.jpg" class="img-circle" width="40px" height="40px">
+				<span style="padding-left: 15px;">巴马一哥卢宝嘉</span>
+			</div>
+		</div>
+		<div class="task">
+			<div style="width:100%;font-size: 22px;text-align: center;">图书馆管理系统</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; margin-top: 10px; word-wrap:break-word;">
+				<span style="padding-right: 50px;">赏金</span>
+				<span>100元</span>
+				</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; word-wrap:break-word;margin-top: 10px;">
+				<span style="padding-right: 50px;">周期</span>
+				<span>2天</span>
+			</div>
+			<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%;word-wrap:break-word; margin-top:10px; padding-bottom: 8px;">
+				<span style="padding-right: 20px;">报名截止</span>
+				<span>2018-06-05 15:15:15</span>
+			</div>
+			<div style="display: inline-block; width:80%; text-align: left;font-size: 15px;border-top: 2px solid red; padding-top: 8px;">
+				<img src="img/timg.jpg" class="img-circle" width="40px" height="40px">
+				<span style="padding-left: 15px;">巴马一哥卢宝嘉</span>
+			</div>
+		</div>
+	</div>
+	<div style="margin-top:30px; height:50px;">
+		<input class="btn btn-default" style="width: 150px; height: 40px; margin-left: 50px; background:#169BD5; color:white;" type="button" value="查看更多">
+	</div>
+</div>
+
+<div style="background:white; width:100%; height:10%;"></div>
+<div class="excellent_man">
+	<div style="width:100%; text-align:center; font-size:28px;padding-top:40px;">
+		优秀任务达人
+	</div>
+	<div style="font-size:28px; width:80%; display:inline-block; text-align:center;">
+		<div class="man">
+			<div style="width:100%; text-align:center;">
+				<img src="img/headImg.jpg" class="img-circle" width="50px" height="50px">
+			</div>
+			<div style="width:100%;font-size:18px;text-align: center; word-wrap:break-word;">
+				乡村教师马云
+			</div>
+			<div style="width:100%; font-size:15px; text-align:left; word-wrap:break-word; padding-left: 10px; padding-right: 10px;padding-bottom: 8px;">
+				 阿里巴巴集团主要创始人，现担任阿里巴巴集团董事局主席、日本软银董事.......
+			</div>
+			<div style="width:100%; font-size:14px; text-align:center; word-wrap:break-word; padding-left: 10px; padding-right: 10px;border-top: 2px solid red; padding-top: 8px;">
+				已完成99单，好评率99%
+			</div>
+		</div>
+		<div class="man">
+			<div style="width:100%; text-align:center;">
+				<img src="img/headImg.jpg" class="img-circle" width="50px" height="50px">
+			</div>
+			<div style="width:100%;font-size:18px;text-align: center; word-wrap:break-word;">
+				乡村教师马云
+			</div>
+			<div style="width:100%; font-size:15px; text-align:left; word-wrap:break-word; padding-left: 10px; padding-right: 10px;padding-bottom: 8px;">
+				阿里巴巴集团主要创始人，现担任阿里巴巴集团董事局主席、日本软银董事.......
+			</div>
+			<div style="width:100%; font-size:14px; text-align:center; word-wrap:break-word; padding-left: 10px; padding-right: 10px;border-top: 2px solid red; padding-top: 8px;">
+				已完成99单，好评率99%
+			</div>
+		</div>
+		<div class="man">
+			<div style="width:100%; text-align:center;">
+				<img src="img/headImg.jpg" class="img-circle" width="50px" height="50px">
+			</div>
+			<div style="width:100%;font-size:18px;text-align: center; word-wrap:break-word;">
+				乡村教师马云
+			</div>
+			<div style="width:100%; font-size:15px; text-align:left; word-wrap:break-word; padding-left: 10px; padding-right: 10px;padding-bottom: 8px;">
+				阿里巴巴集团主要创始人，现担任阿里巴巴集团董事局主席、日本软银董事.......
+			</div>
+			<div style="width:100%; font-size:14px; text-align:center; word-wrap:break-word; padding-left: 10px; padding-right: 10px;border-top: 2px solid red; padding-top: 8px;">
+				已完成99单，好评率99%
+			</div>
+		</div>
+		<div class="man">
+			<div style="width:100%; text-align:center;">
+				<img src="img/headImg.jpg" class="img-circle" width="50px" height="50px">
+			</div>
+			<div style="width:100%;font-size:18px;text-align: center; word-wrap:break-word;">
+				乡村教师马云
+			</div>
+			<div style="width:100%; font-size:15px; text-align:left; word-wrap:break-word; padding-left: 10px; padding-right: 10px;padding-bottom: 8px;">
+				阿里巴巴集团主要创始人，现担任阿里巴巴集团董事局主席、日本软银董事.......
+			</div>
+			<div style="width:100%; font-size:14px; text-align:center; word-wrap:break-word; padding-left: 10px; padding-right: 10px;border-top: 2px solid red; padding-top: 8px;">
+				已完成99单，好评率99%
+			</div>
+		</div>
+		<div class="man">
+			<div style="width:100%; text-align:center;">
+				<img src="img/headImg.jpg" class="img-circle" width="50px" height="50px">
+			</div>
+			<div style="width:100%;font-size:18px;text-align: center; word-wrap:break-word;">
+				乡村教师马云
+			</div>
+			<div style="width:100%; font-size:15px; text-align:left; word-wrap:break-word; padding-left: 10px; padding-right: 10px;padding-bottom: 8px;">
+				阿里巴巴集团主要创始人，现担任阿里巴巴集团董事局主席、日本软银董事.......
+			</div>
+			<div style="width:100%; font-size:14px; text-align:center; word-wrap:break-word; padding-left: 10px; padding-right: 10px;border-top: 2px solid red; padding-top: 8px;">
+				已完成99单，好评率99%
+			</div>
+		</div>
+		<div class="man">
+			<div style="width:100%; text-align:center;">
+				<img src="img/headImg.jpg" class="img-circle" width="50px" height="50px">
+			</div>
+			<div style="width:100%;font-size:18px;text-align: center; word-wrap:break-word;">
+				乡村教师马云
+			</div>
+			<div style="width:100%; font-size:15px; text-align:left; word-wrap:break-word; padding-left: 10px; padding-right: 10px;padding-bottom: 8px;">
+				阿里巴巴集团主要创始人，现担任阿里巴巴集团董事局主席、日本软银董事.......
+			</div>
+			<div style="width:100%; font-size:14px; text-align:center; word-wrap:break-word; padding-left: 10px; padding-right: 10px;border-top: 2px solid red; padding-top: 8px;">
+				已完成99单，好评率99%
+			</div>
+		</div>
+		<div class="man">
+			<div style="width:100%; text-align:center;">
+				<img src="img/headImg.jpg" class="img-circle" width="50px" height="50px">
+			</div>
+			<div style="width:100%;font-size:18px;text-align: center; word-wrap:break-word;">
+				乡村教师马云
+			</div>
+			<div style="width:100%; font-size:15px; text-align:left; word-wrap:break-word; padding-left: 10px; padding-right: 10px;padding-bottom: 8px;">
+				阿里巴巴集团主要创始人，现担任阿里巴巴集团董事局主席、日本软银董事.......
+			</div>
+			<div style="width:100%; font-size:14px; text-align:center; word-wrap:break-word; padding-left: 10px; padding-right: 10px;border-top: 2px solid red; padding-top: 8px;">
+				已完成99单，好评率99%
+			</div>
+		</div>
+		<div class="man">
+			<div style="width:100%; text-align:center;">
+				<img src="img/headImg.jpg" class="img-circle" width="50px" height="50px">
+			</div>
+			<div style="width:100%;font-size:18px;text-align: center; word-wrap:break-word;">
+				乡村教师马云
+			</div>
+			<div style="width:100%; font-size:15px; text-align:left; word-wrap:break-word; padding-left: 10px; padding-right: 10px;padding-bottom: 8px;">
+				阿里巴巴集团主要创始人，现担任阿里巴巴集团董事局主席、日本软银董事.......
+			</div>
+			<div style="width:100%; font-size:14px; text-align:center; word-wrap:break-word; padding-left: 10px; padding-right: 10px;border-top: 2px solid red; padding-top: 8px;">
+				已完成99单，好评率99%
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	<div style="display:inline-block; color: white; font-size: 20px; padding-right: 10%; height: 50px;	padding-top: 20px;">
+		河池之星
+	</div>
+	<div style="display:inline-block; color: white; font-size: 18px;padding-left: 10%; padding-right: 10%;height: 50px;">
+		Copyright © 2018-2022
+	</div>
+	<div style="float:right;  color: white; font-size: 15px;padding-right: 10%;height: 50px; padding-top: 15px;">
+		<div style="text-align: left;">
+			<span class="glyphicon glyphicon-map-marker" style="padding-right: 10px;"></span>广西河池市金城江区河池高中
+		</div>
+		<div style="text-align: left;">
+			<span class="glyphicon glyphicon-phone-alt" style="padding-right: 10px;"></span>0778-2732188
+		</div>
+	</div>
+</div>
+</body>
+</html>

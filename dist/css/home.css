@@ -1,0 +1,109 @@
+html {
+	width: 100%;
+	min-width: 800px;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+.header {
+	width: 100%;
+	height: 40px;
+}
+
+.header_left {
+	display: inline-block;
+	width: 200px;
+	margin-top: 5px;
+	margin-left: 15%;
+	font-size: 22px;
+}
+
+.header_right {
+	float: right;
+	margin-top: 10px;
+	margin-right: 10%;
+	width: 50%;
+	font-size: 18px;
+}
+
+.header_right_item {
+	float: right;
+	width: 100px;
+	font-size: 18px;
+}
+
+.home_img {
+	position: relative;
+	width: 100%;
+	height: 60%;
+	background: red;
+	background-image: url(../img/timg.jpg);
+	background-size: 100% 100%;
+}
+
+.home_img_cover {
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: 0.7;
+}
+
+.task_market {
+	width: 100%;
+	background: #F2F2F2;
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+.task {
+	display: inline-block;
+	width: 30%;
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
+	padding: 15px;
+	background: white;
+}
+
+.excellent_man {
+	width: 100%;
+	background: #F2F2F2;
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+.man {
+	display: inline-block;
+	width: 20%;
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
+	padding: 15px;
+	background: white;
+}
+
+.footer {
+	width: 100%;
+	height: 10%;
+	background: #2B3747;
+	text-align: center;
+	position: relative;
+}
+
+.login {
+	width: 440px;
+	height: 438px;
+	background: white;
+	margin: 50px auto;
+}
+
+.register {
+	width: 440px;
+	height: 438px;
+	background: white;
+	margin: 50px auto;
+}

@@ -4,126 +4,23 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../dist/css/home.css">
 		<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 		<script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
 		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../dist/js/controller/test.js"></script>
-		<style type="text/css">
-			html {
-				width: 100%;
-				min-width: 800px;
-				height: 100%;
-			}
-			
-			body {
-				width: 100%;
-				height: 100%;
-			}
-			
-			.header {
-				width: 100%;
-				height: 40px;
-			}
-			
-			.header_left {
-				display: inline-block;
-				width: 200px;
-				margin-top: 5px;
-				margin-left: 15%;
-				font-size: 22px;
-			}
-			
-			.header_right {
-				float: right;
-				margin-top: 10px;
-				margin-right: 10%;
-				width: 50%;
-				font-size: 18px;
-			}
-			
-			.header_right_item {
-				float: right;
-				width: 100px;
-				font-size: 18px;
-			}
-			
-			.home_img {
-				position: relative;
-				width: 100%;
-				height: 60%;
-				background: red;
-				background-image: url(../dist/img/timg.jpg);
-				background-size: 100% 100%;
-			}
-			
-			.home_img_cover {
-				width: 100%;
-				height: 100%;
-				background: black;
-				opacity: 0.7;
-			}
-			
-			.task_market {
-				width: 100%;
-				background: #F2F2F2;
-				text-align: center;
-				padding-bottom: 50px;
-			}
-			
-			.task {
-				display: inline-block;
-				width: 30%;
-				margin-top: 20px;
-				margin-right: 10px;
-				margin-left: 10px;
-				padding: 15px;
-				background: white;
-			}
-			
-			.excellent_man {
-				width: 100%;
-				background: #F2F2F2;
-				text-align: center;
-				padding-bottom: 50px;
-			}
-			
-			.man {
-				display: inline-block;
-				width: 20%;
-				margin-top: 20px;
-				margin-right: 10px;
-				margin-left: 10px;
-				padding: 15px;
-				background: white;
-			}
-			
-			.footer {
-				width: 100%;
-				height: 10%;
-				background: #2B3747;
-				text-align: center;
-				position: relative;
-			}
-			
-			.login {
-				width: 440px;
-				height: 438px;
-				background: white;
-				margin: 50px auto;
-			}
-		</style>
 	</head>
 
 	<body ng-app="app" ng-controller="test"> 
 		<div class="home_img">
 			<div class="home_img_cover"></div>
-			<div style="position: absolute; left:10%; color: white; top:5%; font-size: 25px;">
-				河池之星
+			<div style="position: absolute; left:10%; color: white; top:4%; font-size: 25px;">
+				万事屋
 			</div>
-			<div style="position: absolute; right:15%; color: white; top:5%; font-size: 20px;" data-toggle="modal" data-target="#register">
+			<div style="position: absolute; right:15%; color: white; top:5%; font-size: 20px; cursor:pointer;" data-toggle="modal" data-target="#register">
 				注册
 			</div>
-			<div style="position: absolute; right:20%; color: white; top:5%; font-size: 20px;" data-toggle="modal" data-target="#login">
+			<div style="position: absolute; right:20%; color: white; top:5%; font-size: 20px; cursor:pointer;" data-toggle="modal" data-target="#login">
 				登录
 			</div>
 			<div style="position:absolute; top:80%;left:10%;width:400px">
@@ -133,133 +30,71 @@
 		</div>
 		<div class="modal fade" id="login">
 			<div class="login">
-				<div style="width: 100%; font-size: 25px; color: #FF6A6A; text-align: center; padding-top: 20px;">河池之星</div>
-				<div style="width: 100%; font-size: 17px; color: #FF6A6A; text-align: center; padding-top: 10px;">登录河池之星，发现更多的机会</div>
-				<input style="width:75%; border:none; border-bottom:2px solid #eee;outline: none; margin-left:12%; margin-top: 40px;">
-				<input style="width:75%; border:none; border-bottom:2px solid #eee;outline: none; margin-left:12%;margin-top: 50px;">
+				<div style="height:90%; width:100%;">
+					<div style="width: 100%; font-size: 25px; color: #FF6A6A; text-align: center; padding-top: 20px;">万事屋</div>
+					<div style="width: 100%; font-size: 17px; color: #FF6A6A; text-align: center; padding-top: 10px;">登录万事屋，发现更多的机会</div>
+					<input style="width:75%; border:none; border-bottom:2px solid #eee;outline: none; margin-left:12%; margin-top: 40px; font-size: 17px;" placeholder="请输入手机号或邮箱">
+					<input type="password" style="width:75%; border:none; border-bottom:2px solid #eee;outline: none; margin-left:12%;margin-top: 50px; font-size: 17px;" placeholder="请输入密码">
+					<span class="glyphicon glyphicon-eye-close" style="font-size: 19px;"></span>
+					<div style="width: 75%; margin-left:12%; margin-top: 12px;">
+						<span style="color:#FF6A6A; cursor:pointer;">短信验证码登录</span>
+						<span style="float:right; cursor:pointer;">忘记密码？</span>
+					</div>
+					<button class="btn btn-default" type="submit" style="color:white; background:#FF6A6A; width:60%; margin-left: 18%; margin-top: 20px;">登录</button>
+				</div>
+				<div style="background: #F2F2F2; text-align:center; padding-top:10px; height:10%; font-size: 16px;">
+					没有账号？<span style="color:#FF6A6A"> 注册</span>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="register">
+			<div class="register">
+				<div style="height:90%; width:100%;">
+					<div style="width: 100%; font-size: 25px; color: #FF6A6A; text-align: center; padding-top: 20px;">万事屋</div>
+					<div style="width: 100%; font-size: 17px; color: #FF6A6A; text-align: center; padding-top: 10px;">注册万事屋，发现更多的机会</div>
+					<input style="width:75%; border:none; border-bottom:2px solid #eee;outline: none; margin-left:12%; margin-top: 40px; font-size: 17px;" placeholder="请输入邮箱">
+					<div style="margin-left:12%; width:75%; border-bottom:2px solid #eee;">
+						<input type="password" style="width:50%; border:none; outline: none; margin-top: 50px; font-size: 17px;" placeholder="请输入邮箱验证码">
+						<div style="display:inline-block; width:45%; text-align: right; font-size: 15px;">获取验证码</div>
+					</div>
+					<button class="btn btn-default" type="submit" style="color:white; background:#FF6A6A; width:60%; margin-left: 18%; margin-top: 20px;">注册</button>
+					<div style="width:100%; text-align:center; font-size:15px; margin-top:20px;">
+						注册即代表同意
+						<span>《万事屋协议》</span>
+						<span>《隐私政策》</span>
+					</div>
+				</div>
+				<div style="background: #F2F2F2; text-align:center; padding-top:10px; height:10%; font-size: 16px;">
+					已有账号？<span style="color:#FF6A6A"> 登录</span>
+				</div>
 			</div>
 		</div>
 		<div class="modal fade" id="register">
 			<div class="login">
 			</div>
 		</div>
-		<div class="task_market">
+		<div class="task_market"  ng-controller="tasks">
 			<div style="width:100%; text-align:center; font-size:28px;padding-top:40px;">
 				任务市场
 			</div>
 			<div style="font-size:28px; width: 80%; display: inline-block;text-align: center;">
-				<div class="task">
+				<div class="task" ng-repeat="task in tasks">
 					<div style="width:100%;font-size: 22px;text-align: center;">图书馆管理系统</div>
 					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; margin-top: 10px; word-wrap:break-word;">
 						<span style="padding-right: 50px;">赏金</span>
-						<span>100元</span>
+						<span>100{{ task.reward }}</span>
 					</div>
 					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; word-wrap:break-word;margin-top: 10px;">
 						<span style="padding-right: 50px;">周期</span>
-						<span>2天</span>
+						<span>{{ task.period }}天</span>
 					</div>
 					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%;word-wrap:break-word; margin-top:10px; padding-bottom: 8px;">
 						<span style="padding-right: 20px;">报名截止</span>
-						<span>2018-06-05 15:15:15</span>
+						<span>{{ task.deadline }}</span>
 					</div>
 					<div style="display: inline-block; width:80%; text-align: left;font-size: 15px;border-top: 2px solid red; padding-top: 8px;">
-						<img src="img/timg.jpg" class="img-circle" width="40px" height="40px">
-						<span style="padding-left: 15px;">巴马一哥卢宝嘉</span>
-					</div>
-				</div>
-				<div class="task">
-					<div style="width:100%;font-size: 22px;text-align: center;">图书馆管理系统</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; margin-top: 10px; word-wrap:break-word;">
-						<span style="padding-right: 50px;">赏金</span>
-						<span>100元</span>
-					</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; word-wrap:break-word;margin-top: 10px;">
-						<span style="padding-right: 50px;">周期</span>
-						<span>2天</span>
-					</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%;word-wrap:break-word; margin-top:10px; padding-bottom: 8px;">
-						<span style="padding-right: 20px;">报名截止</span>
-						<span>2018-06-05 15:15:15</span>
-					</div>
-					<div style="display: inline-block; width:80%; text-align: left;font-size: 15px;border-top: 2px solid red; padding-top: 8px;">
-						<img src="img/timg.jpg" class="img-circle" width="40px" height="40px">
-						<span style="padding-left: 15px;">巴马一哥卢宝嘉</span>
-					</div>
-				</div>
-				<div class="task">
-					<div style="width:100%;font-size: 22px;text-align: center;">图书馆管理系统</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; margin-top: 10px; word-wrap:break-word;">
-						<span style="padding-right: 50px;">赏金</span>
-						<span>100元</span>
-					</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; word-wrap:break-word;margin-top: 10px;">
-						<span style="padding-right: 50px;">周期</span>
-						<span>2天</span>
-					</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%;word-wrap:break-word; margin-top:10px; padding-bottom: 8px;">
-						<span style="padding-right: 20px;">报名截止</span>
-						<span>2018-06-05 15:15:15</span>
-					</div>
-					<div style="display: inline-block; width:80%; text-align: left;font-size: 15px;border-top: 2px solid red; padding-top: 8px;">
-						<img src="img/timg.jpg" class="img-circle" width="40px" height="40px">
-						<span style="padding-left: 15px;">巴马一哥卢宝嘉</span>
-					</div>
-				</div>
-				<div class="task">
-					<div style="width:100%;font-size: 22px;text-align: center;">图书馆管理系统</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; margin-top: 10px; word-wrap:break-word;">
-						<span style="padding-right: 50px;">赏金</span>
-						<span>100元</span>
-					</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; word-wrap:break-word;margin-top: 10px;">
-						<span style="padding-right: 50px;">周期</span>
-						<span>2天</span>
-					</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%;word-wrap:break-word; margin-top:10px; padding-bottom: 8px;">
-						<span style="padding-right: 20px;">报名截止</span>
-						<span>2018-06-05 15:15:15</span>
-					</div>
-					<div style="display: inline-block; width:80%; text-align: left;font-size: 15px;border-top: 2px solid red; padding-top: 8px;">
-						<img src="img/timg.jpg" class="img-circle" width="40px" height="40px">
-						<span style="padding-left: 15px;">巴马一哥卢宝嘉</span>
-					</div>
-				</div>
-				<div class="task">
-					<div style="width:100%;font-size: 22px;text-align: center;">图书馆管理系统</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; margin-top: 10px; word-wrap:break-word;">
-						<span style="padding-right: 50px;">赏金</span>
-						<span>100元</span>
-					</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; word-wrap:break-word;margin-top: 10px;">
-						<span style="padding-right: 50px;">周期</span>
-						<span>2天</span>
-					</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%;word-wrap:break-word; margin-top:10px; padding-bottom: 8px;">
-						<span style="padding-right: 20px;">报名截止</span>
-						<span>2018-06-05 15:15:15</span>
-					</div>
-					<div style="display: inline-block; width:80%; text-align: left;font-size: 15px;border-top: 2px solid red; padding-top: 8px;">
-						<img src="img/timg.jpg" class="img-circle" width="40px" height="40px">
-						<span style="padding-left: 15px;">巴马一哥卢宝嘉</span>
-					</div>
-				</div>
-				<div class="task">
-					<div style="width:100%;font-size: 22px;text-align: center;">图书馆管理系统</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; margin-top: 10px; word-wrap:break-word;">
-						<span style="padding-right: 50px;">赏金</span>
-						<span>100元</span>
-					</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%; word-wrap:break-word;margin-top: 10px;">
-						<span style="padding-right: 50px;">周期</span>
-						<span>2天</span>
-					</div>
-					<div style="width:90%; font-size: 15px;text-align: left;margin-left: 10%;word-wrap:break-word; margin-top:10px; padding-bottom: 8px;">
-						<span style="padding-right: 20px;">报名截止</span>
-						<span>2018-06-05 15:15:15</span>
-					</div>
-					<div style="display: inline-block; width:80%; text-align: left;font-size: 15px;border-top: 2px solid red; padding-top: 8px;">
-						<img src="img/timg.jpg" class="img-circle" width="40px" height="40px">
-						<span style="padding-left: 15px;">巴马一哥卢宝嘉</span>
+						<img src="../dist/img/timg.jpg" class="img-circle" width="40px" height="40px">
+						<span style="padding-left: 15px;">{{ task.demandUser}}</span>
 					</div>
 				</div>
 			</div>
@@ -307,7 +142,7 @@
 		<div class="footer">
 
 			<div style="display: inline-block; color: white; font-size: 20px; padding-top: 20px;padding-left: 10%;">
-				河池之星
+				万事屋
 			</div>
 			<div style="display: inline-block;color: white; font-size: 18px;padding-left: 20%; padding-right: 20%;padding-top: 25px;">
 				Copyright © 2018-2022

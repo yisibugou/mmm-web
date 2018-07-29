@@ -7,6 +7,7 @@ html {
 body {
 	width: 100%;
 	height: 100%;
+	font-family: "Microsoft YaHei", "微软雅黑" !important;;
 }
 
 .header {
@@ -68,7 +69,12 @@ body {
 	padding: 15px;
 	background: white;
 }
-
+.task:hover {
+	box-shadow: 10px 10px 5px #888888;
+	position: relative;
+	right: 5px;
+	bottom: 5px;
+}
 .excellent_man {
 	width: 100%;
 	background: #F2F2F2;
@@ -84,6 +90,12 @@ body {
 	margin-left: 10px;
 	padding: 15px;
 	background: white;
+}
+.man:hover{
+	box-shadow: 10px 10px 5px #888888;
+	position: relative;
+	right: 5px;
+	bottom: 5px;
 }
 
 .footer {

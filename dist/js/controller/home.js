@@ -96,6 +96,18 @@ myApp.controller('test', function($scope, $http){
 		localStorage.clear(); 
 		window.location.href="http://localhost/mmm-web/html/home.html";
 	};
+	$scope.eyeClass = "glyphicon glyphicon-eye-close";
+	$scope.pswType = "password";
+	$scope.changeVisible = function() {
+		if($scope.pswType == "text") {
+			$scope.pswType = "password";
+			$scope.eyeClass = "glyphicon glyphicon-eye-close";
+		}
+		else {
+			$scope.pswType = "text";
+			$scope.eyeClass = "glyphicon glyphicon-eye-open";
+		}
+	};
 });
 
 

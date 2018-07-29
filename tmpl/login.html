@@ -5,8 +5,8 @@
 			<div style="width: 100%; font-size: 25px; color: #FF6A6A; text-align: center; padding-top: 20px;">万事屋</div>
 			<div style="width: 100%; font-size: 17px; color: #FF6A6A; text-align: center; padding-top: 10px;">登录万事屋，发现更多的机会</div>
 			<input ng-model="username" style="width:75%; border:none; border-bottom:2px solid #eee;outline: none; margin-left:12%; margin-top: 40px; font-size: 17px;" placeholder="请输入手机号或邮箱">
-			<input ng-model="password" type="password" style="width:75%; border:none; border-bottom:2px solid #eee;outline: none; margin-left:12%;margin-top: 50px; font-size: 17px;" placeholder="请输入密码">
-			<span class="glyphicon glyphicon-eye-close" style="font-size: 19px;"></span>
+			<input ng-model="password" type="{{ pswType }}" style="width:75%; border:none; border-bottom:2px solid #eee;outline: none; margin-left:12%;margin-top: 50px; font-size: 17px;" placeholder="请输入密码">
+			<span class="{{ eyeClass }}" style="font-size: 19px;" ng-click="changeVisible()"></span>
 			<div style="width: 75%; margin-left:12%; margin-top: 12px;">
 				<span style="color:#FF6A6A; cursor:pointer;">短信验证码登录</span>
 				<span style="float:right; cursor:pointer;">忘记密码？</span>

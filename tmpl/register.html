@@ -1,19 +1,25 @@
 <div class="modal fade" id="register">
 	<div class="register">
 		<div style="height:90%; width:100%;">
-			<div style="width: 100%; font-size: 25px; color: #FF6A6A; text-align: center; padding-top: 20px;">万事屋</div>
-			<div style="width: 100%; font-size: 17px; color: #FF6A6A; text-align: center; padding-top: 10px;">注册万事屋，发现更多的机会</div>
-			<input style="width:75%; border:none; border-bottom:2px solid #eee;outline: none; margin-left:12%; margin-top: 40px; font-size: 17px;" placeholder="请输入邮箱">
-			<div style="margin-left:12%; width:75%; border-bottom:2px solid #eee;">
-				<input type="password" style="width:50%; border:none; outline: none; margin-top: 50px; font-size: 17px;" placeholder="请输入邮箱验证码">
-				<div style="display:inline-block; width:45%; text-align: right; font-size: 15px;">获取验证码</div>
-			</div>
-			<button class="btn btn-default" type="submit" style="color:white; background:#FF6A6A; width:60%; margin-left: 18%; margin-top: 20px;">注册</button>
-			<div style="width:100%; text-align:center; font-size:15px; margin-top:20px;">
-				注册即代表同意
-				<span>《万事屋协议》</span>
-				<span>《隐私政策》</span>
-			</div>
+			<form name="registerForm" novalidate>
+				<div style="width: 100%; font-size: 25px; color: #FF6A6A; text-align: center; padding-top: 20px;">万事屋</div>
+				<div style="width: 100%; font-size: 17px; color: #FF6A6A; text-align: center; padding-top: 10px;">注册万事屋，发现更多的机会</div>
+				<input type="email" name="email" ng-model="email" style="width:75%; border:none; border-bottom:2px solid #eee;outline: none; margin-left:12%; margin-top: 40px; font-size: 17px;" placeholder="请输入邮箱" required>
+				<div style="color:red; margin-left:12%;" ng-show="registerForm.email.$dirty">
+					<div ng-show="registerForm.email.$error.required">邮箱是必须的</div>
+					<div ng-show="registerForm.email.$error.email">非法的邮箱</div>
+				</div>
+				<div style="margin-left:12%; width:75%; border-bottom:2px solid #eee;">
+					<input style="width:50%; border:none; outline: none; margin-top: 50px; font-size: 17px;" placeholder="请输入邮箱验证码">
+					<div ng-click="sendCode()" style="display:inline-block; width:45%; text-align: right; font-size: 16px; color:#FF6A6A">{{ sendCodeBtn }}</div>
+				</div>
+				<button class="btn btn-default" type="button" style="color:white; background:#FF6A6A; width:60%; margin-left: 18%; margin-top: 20px;">注册</button>
+				<div style="width:100%; text-align:center; font-size:15px; margin-top:20px;">
+					注册即代表同意
+					<span>《万事屋协议》</span>
+					<span>《隐私政策》</span>
+				</div>
+			</form>
 		</div>
 		<div style="background: #F2F2F2; text-align:center; padding-top:10px; height:10%; font-size: 16px;">
 			已有账号？<span style="color:#FF6A6A"> 登录</span>

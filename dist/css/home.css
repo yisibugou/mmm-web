@@ -119,3 +119,8 @@ body {
 	background: white;
 	margin: 50px auto;
 }
+
+.userDiv:hover {
+	background: #F1948A;
+	color: white;
+}

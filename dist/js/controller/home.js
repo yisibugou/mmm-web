@@ -1,5 +1,5 @@
 var myApp=angular.module('app', []);
-myApp.controller('test', function($scope, $http){
+myApp.controller('test', function($scope, $http, $interval){
 	if(localStorage.user != null) {
 		$scope.user = JSON.parse(localStorage.user);
 		$scope.isLogin = true;
@@ -83,11 +83,13 @@ myApp.controller('test', function($scope, $http){
 				account: $scope.username,
 				password: $scope.password
 			},
-			url: 'http://localhost:8080/user/login'
+			url: 'http://localhost:8080/mmm/user/login'
 		}).then(function successCallback(response) {
-				var userStr = JSON.stringify(response.data.user);
-				localStorage.user = userStr;
-				window.location.href="http://localhost/mmm-web/html/home.html";
+				if(response.data.errCode == 0) {
+					var userStr = JSON.stringify(response.data.user);
+					localStorage.user = userStr;
+					window.location.href="http://localhost/mmm-web/html/home.html";
+				}
 			}, function errorCallback(response) {
 				alert("请求失败");
 		});
@@ -108,6 +110,33 @@ myApp.controller('test', function($scope, $http){
 			$scope.eyeClass = "glyphicon glyphicon-eye-open";
 		}
 	};
+	$scope.sendCodeBtn = "获取验证码";
+	$scope.sendCodeTime = 0;
+	$scope.sendCode = function() {
+		$scope.registerForm.email.$dirty = true;
+		if( !$scope.registerForm.email.$error.email && !$scope.registerForm.email.$error.required && $scope.sendCodeTime == 0) {
+			$scope.sendCodeTime = 10;
+			$scope.sendCodeBtn = $scope.sendCodeTime + "s";
+			$interval(function(){
+				$scope.sendCodeTime--;
+				$scope.sendCodeBtn = $scope.sendCodeTime + "s";
+				if($scope.sendCodeTime == 0) {
+					$scope.sendCodeBtn ="获取验证码";
+				}
+			}, 1000, 10);
+			/* $http({
+				method: 'POST',
+				data: {
+					email: $scope.email,
+				},
+				url: 'http://localhost:8080/user/sendEmailCode'
+			}).then(function successCallback(response) {
+				
+				}, function errorCallback(response) {
+					alert("请求失败");
+			}); */
+		}
+	};
 });
 
 
@@ -120,7 +149,7 @@ myApp.directive("loginTmpl", function() {
 
 myApp.directive("registerTmpl", function() {
     return {
-        templateUrl : "http://localhost/mmm-web/tmpl/register.html",
+        templateUrl : "http://localhost/mmm-web/tmpl/register.html?v=1",
 		restrict : "E"
     };
 });

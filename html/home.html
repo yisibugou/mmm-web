@@ -4,11 +4,11 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" href="../dist/css/home.css?v=1">
+		<link rel="stylesheet" href="../dist/css/home.css?v=11">
 		<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 		<script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
 		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../dist/js/controller/home.js?v=1ss"></script>
+		<script type="text/javascript" src="../dist/js/controller/home.js?v=1"></script>
 	</head>
 
 	<body ng-app="app" ng-controller="test"> 
@@ -24,19 +24,19 @@
 					<div style="color:white; font-size: 20px; cursor:pointer;width:100%;">
 						<img src="../dist/img/timg.jpg" class="img-circle" width="40px" height="40px" ng-init="userDiv=false" ng-mouseover="userDiv=true">
 					</div>
-					<div ng-if="userDiv" style="position:relative; background:white; top:10px;  width:100%; padding:5px; border-radius:6px; font-size: 16px;">
+					<div ng-if="userDiv" style="position:relative; background:white; top:10px;  width:100%; padding-top: 10px; border-radius:6px; font-size: 16px; overflow:hidden">
 						<div style="padding-bottom: 5px; cursor: pointer;">
 							<span style="font-size:18px;">{{ user.userName }}</span>
 						</div>
-						<div style="border-bottom: 1px solid #F7F6F2;padding-top: 10px; padding-bottom: 5px; cursor: pointer;">
+						<div class="userDiv" style="border-bottom: 1px solid #F7F6F2;padding-top: 10px; padding-bottom: 5px; cursor: pointer;">
 							<span class="glyphicon glyphicon-user"></span>
 							<span style="padding-left:10px;padding-right: 10px;">个人中心</span>
 						</div>
-						<div style="padding-top: 10px; border-bottom: 1px solid #F7F6F2; padding-bottom: 5px; cursor: pointer;">
+						<div class="userDiv" style="padding-top: 10px; border-bottom: 1px solid #F7F6F2; padding-bottom: 5px; cursor: pointer;">
 							<span class="glyphicon glyphicon-bell"></span>
 							<span style="padding-left:10px;padding-right: 10px;">消息通知</span>
 						</div>
-						<div style="padding-top: 10px; cursor: pointer; padding-bottom: 5px;">
+						<div class="userDiv" style="padding-top: 10px; cursor: pointer; padding-bottom: 5px; ">
 							<span class="glyphicon glyphicon-off"></span>
 							<span style="padding-left:10px;padding-right:10px;" ng-click="logout()">退出登录</span>
 						</div>

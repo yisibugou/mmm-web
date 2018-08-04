@@ -76,6 +76,7 @@ myApp.controller('test', function($scope, $http, $interval){
 		'deadline': '2018-07-24 18:18:18',
 		'demandUser' : '卢宝嘉'
 	}];
+	// 登录
 	$scope.login = function() {
 		$http({
 			method: 'POST',
@@ -94,12 +95,61 @@ myApp.controller('test', function($scope, $http, $interval){
 				alert("请求失败");
 		});
 	};
+	// 注册
+	$scope.register = function() {
+		$scope.registerForm.email.$dirty = true;
+		$scope.registerForm.code.$dirty = true;
+		$scope.registerForm.password.$dirty = true;
+		if(!$scope.registerForm.email.$error.email && !$scope.registerForm.email.$error.required && !$scope.isRegistered && 
+			!$scope.registerForm.code.$error.required && !$scope.registerForm.code.$error.required) {
+			$http({
+				method: 'POST',
+				data: {
+					reqType: 0,
+					email: $scope.email,
+					password: $scope.password,
+					code: $scope.code
+				},
+				url: 'http://localhost:8080/mmm/user/register'
+				}).then(function successCallback(response) {
+					if(response.data.errCode == 0) {
+						alert("注册成功");
+					} else {
+						alert("注册失败");
+					}
+					window.location.href="http://localhost/mmm-web/html/home.html";
+				}, function errorCallback(response) {
+					alert("请求失败");
+			});
+		}
+	};
+	// 注册时，监控输入框改变事件，查看是否用户存在
+	$scope.checkIsRegistered = function() {
+		if(!$scope.registerForm.email.$error.email && !$scope.registerForm.email.$error.required) {
+			$http({
+				method: 'POST',
+				data: {
+					reqType: 0,
+					email: $scope.email
+				},
+				url: 'http://localhost:8080/mmm/user/isRegistered'
+				}).then(function successCallback(response) {
+					if(response.data.errCode == 1)
+						$scope.isRegistered = true;
+					else
+						$scope.isRegistered = false;
+				}, function errorCallback(response) {
+					alert("请求失败");
+			});
+		}
+	};
+	// 退出登录
 	$scope.logout = function() {
 		localStorage.clear(); 
 		window.location.href="http://localhost/mmm-web/html/home.html";
 	};
-	$scope.eyeClass = "glyphicon glyphicon-eye-close";
-	$scope.pswType = "password";
+	
+	// 密码是否可见
 	$scope.changeVisible = function() {
 		if($scope.pswType == "text") {
 			$scope.pswType = "password";
@@ -110,12 +160,11 @@ myApp.controller('test', function($scope, $http, $interval){
 			$scope.eyeClass = "glyphicon glyphicon-eye-open";
 		}
 	};
-	$scope.sendCodeBtn = "获取验证码";
-	$scope.sendCodeTime = 0;
+	// 获取验证码
 	$scope.sendCode = function() {
 		$scope.registerForm.email.$dirty = true;
-		if( !$scope.registerForm.email.$error.email && !$scope.registerForm.email.$error.required && $scope.sendCodeTime == 0) {
-			$scope.sendCodeTime = 10;
+		if( !$scope.registerForm.email.$error.email && !$scope.registerForm.email.$error.required && !$scope.isRegistered && $scope.sendCodeTime == 0) {
+			$scope.sendCodeTime = 60;
 			$scope.sendCodeBtn = $scope.sendCodeTime + "s";
 			$interval(function(){
 				$scope.sendCodeTime--;
@@ -123,18 +172,18 @@ myApp.controller('test', function($scope, $http, $interval){
 				if($scope.sendCodeTime == 0) {
 					$scope.sendCodeBtn ="获取验证码";
 				}
-			}, 1000, 10);
-			/* $http({
+			}, 1000, 60);
+			$http({
 				method: 'POST',
 				data: {
 					email: $scope.email,
 				},
-				url: 'http://localhost:8080/user/sendEmailCode'
+				url: 'http://localhost:8080/mmm/user/sendEmailCode'
 			}).then(function successCallback(response) {
 				
 				}, function errorCallback(response) {
 					alert("请求失败");
-			}); */
+			}); 
 		}
 	};
 });
@@ -149,7 +198,7 @@ myApp.directive("loginTmpl", function() {
 
 myApp.directive("registerTmpl", function() {
     return {
-        templateUrl : "http://localhost/mmm-web/tmpl/register.html?v=1",
+        templateUrl : "http://localhost/mmm-web/tmpl/register.html?v=21",
 		restrict : "E"
     };
 });

@@ -115,7 +115,7 @@ body {
 
 .register {
 	width: 440px;
-	height: 438px;
+	height: auto;
 	background: white;
 	margin: 50px auto;
 }

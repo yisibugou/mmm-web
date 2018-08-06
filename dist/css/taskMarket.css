@@ -1,0 +1,22 @@
+html {
+	width: 100%;
+	min-width: 800px;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	font-family: "Microsoft YaHei", "微软雅黑" !important;;
+	background: #F2F2F2;
+}
+
+.header {
+	width: 100%;
+	height: 50px;
+	background: #2B3747;
+}
+
+.task:hover {
+	background: bisque;
+}
